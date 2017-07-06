@@ -1,0 +1,64 @@
+doctype html
+html(lang='en')
+    head
+        link(href ='css/bootstrap.min.css' type='text/css' rel='stylesheet')
+        link(href ='css/bootstrap-theme.min.css' type='text/css' rel='stylesheet')        
+        link(href ='css/admin.css' type='text/css' rel='stylesheet')
+    body
+        .navbar-wrapper
+            .container-fluid
+                nav.navbar.navbar-fixed-top.myNav
+                  .container
+                    .navbar-header
+                      button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+                        span.sr-only Toggle navigation
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                    #navbar.navbar-collapse.collapse
+                      ul.nav.navbar-nav
+                        li.active
+                          a.navbar-brand(href='/') Home
+                        li
+                          a.navbar-brand(href='/contact') Contact
+                        li
+                          a.navbar-brand(href='/info') About
+                      ul.nav.navbar-nav.pull-right
+                        li.dropdown
+                          a.navbar-brand.dropdown-toggle.active(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+                            | Signed in as  
+                            span.caret
+                          ul.dropdown-menu
+                            li
+                              a(href='#') Change Password
+                            li
+                              a(href='#') My Profile
+                        li
+                          a.navbar-brand(href='/logout') Logout
+      .container(style='margin-top:130px;')
+        .row
+          h2.text-center #{message}
+          form.form-group.col-sm-7.col-sm-offset-2(action= '/admin', method= 'post')
+            .registration-date
+              label.control-label.col-sm-3(for='date') Date:
+              .input-group.registration-date-time
+                span#basic-addon1.input-group-addon
+                  span.glyphicon.glyphicon-calendar(aria-hidden='true')
+                input#registration-date.form-control(name='date', type='date')
+            br
+            .checkbox.col-sm-7.col-sm-offset-3
+              label
+                input(type="checkbox" id="select_all")
+                | Select All
+                br
+                hr
+                each route in routes
+                  input(type='checkbox')
+                  | #{route.from} To #{route.to}
+                  input(type='hidden' name='routeId' value=route.id)
+                  br
+                  hr
+            button.sub.btn.btn-default(type='submit') Submit 
+      script(src ='js/jquery.min.js')
+      script(src ='js/bootstrap.min.js')
+      script(src ='js/admin.js')

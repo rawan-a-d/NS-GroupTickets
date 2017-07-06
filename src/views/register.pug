@@ -1,0 +1,60 @@
+doctype html
+html(lang='en')
+  head
+    link(href ='css/bootstrap.min.css' type='text/css' rel='stylesheet')
+    link(href ='css/bootstrap-theme.min.css' type='text/css' rel='stylesheet')
+    link(href ='css/register.css' type='text/css' rel='stylesheet')
+  body
+    #fullscreen_bg.fullscreen_bg
+      #regContainer.container
+        .row
+          .col-md-6.col-md-offset-3
+            .panel.panel-login
+              .panel-heading
+                .row
+                  .col-xs-6
+                    a#login-form-link(href='#') Login
+                  .col-xs-6
+                    a#register-form-link.active(href='#') Register
+                hr
+              .panel-body
+                .row
+                  .col-lg-12
+                    form#register-form(action='/register', method='post', role='form', style='display: block;')
+                      .form-group
+                          label(for='name') NAME
+                          input.form-control(name='name', type='text')
+                      .form-group
+                        label(for='email') Email
+                        input#username.form-control(type='text', name='email', tabindex='1')
+                      .form-group
+                        label(for='password') Password
+                        input#password.form-control(type='password', name='password', tabindex='2')
+                      .form-group
+                        label(for='password') Confirm password
+                        input#confirm-password.form-control(type='password', name='password_conf', tabindex='2')
+                      .form-group
+                        .row
+                          .col-sm-6.col-sm-offset-3
+                            input#register-submit.form-control.btn.btn-register(type='submit', name='register-submit', tabindex='4', value='Register Now')
+                    form#login-form(action='/logIn', method='post', role='form', style='display: none;')
+                      .form-group
+                        label(for='email') Email
+                        input#username.form-control(type='text', name='email', tabindex='1', value='')
+                      .form-group
+                        label(for='password') Password
+                        input#password.form-control(type='password', name='password', tabindex='2')
+                      .form-group.text-center
+                        input#remember(type='checkbox', tabindex='3', name='remember')
+                        label(for='remember')  Remember Me
+                      .form-group
+                        .row
+                          .col-sm-6.col-sm-offset-3
+                            input#login-submit.form-control.btn.btn-login(type='submit', name='login-submit', tabindex='4', value='Log In')
+    script(src = 'js/jquery.min.js')
+    script(src = 'js/bootstrap.min.js')
+    script(src ='https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js')
+    script(src ='http://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/additional-methods.min.js')
+    script(src='js/login.js')    
+    script(src='js/validation.js')
+

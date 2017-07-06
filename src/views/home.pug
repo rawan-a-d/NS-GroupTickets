@@ -1,0 +1,36 @@
+doctype html
+html(lang='en')
+    head
+        link(href ='css/bootstrap.min.css' type='text/css' rel='stylesheet')
+        link(href ='css/bootstrap-theme.min.css' type='text/css' rel='stylesheet')
+        link(href ='css/home.css' type='text/css' rel='stylesheet')
+    body
+        .site-wrapper
+          .site-wrapper-inner
+            .well#well1
+                .cover-container
+                  .masthead.clearfix
+                    .inner
+                      a.masthead-brand#heading(href='/routes' style='text-decoration:none') <h3>Begin your journey</h3>
+                      ul.nav.masthead-nav
+                        li
+                          a(href='/logIn') Log in
+                        li
+                          a(href='/contact') Contact
+                  .inner.cover
+                    h1.cover-heading NS Group return ticket
+                    p.lead
+                        | I made this website because I felt the need for something to help organizing the groups.
+                        br
+                        | Dont know about group-tickets yet?
+                    p.lead
+                      a.btn.btn-lg.btn-info(href='/info')
+                        | Learn
+                        | more
+                  .mastfoot
+                    .inner
+                      p
+                        | © 2017 Rawan
+
+        script(src = 'js/jquery.min.js')
+        script(src = 'js/bootstrap.min.js')

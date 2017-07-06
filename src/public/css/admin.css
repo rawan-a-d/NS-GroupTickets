@@ -1,0 +1,17 @@
+.myNav{
+  border: none;
+  background-color: #60c74e;
+  margin-bottom: 60px !important;
+  color: #fff !important;
+}
+
+.navbar-brand{
+  color: white;
+}
+
+.dropdown-menu {
+  left: 50%;
+  right: auto;
+  text-align: center;
+  transform: translate(-50%, 0);
+}

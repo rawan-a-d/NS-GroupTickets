@@ -1,0 +1,66 @@
+doctype html
+html(lang='en')
+    head
+        title Jade
+        link(rel='stylesheet', href='css/bootstrap.min.css')       
+        link(rel='stylesheet', href='css/seePosts.css')
+        link(rel='stylesheet', type='text/css', href='//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css')
+        link(href='https://fonts.googleapis.com/css?family=Lobster', rel='stylesheet', type='text/css')
+    body
+        .navbar-wrapper
+            .container-fluid
+                nav.navbar.navbar-fixed-top.myNav
+                  .container
+                    .navbar-header
+                      button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+                        span.sr-only Toggle navigation
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                    #navbar.navbar-collapse.collapse
+                      ul.nav.navbar-nav
+                        li.active
+                          a.navbar-brand(href='/') Home
+                        li
+                          a.navbar-brand(href='/contact') Contact
+                        li
+                          a.navbar-brand(href='/info') About
+                      ul.nav.navbar-nav.pull-right
+                        li.dropdown
+                          a.navbar-brand.dropdown-toggle.active(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+                            | Signed in as  
+                            span.caret
+                          ul.dropdown-menu
+                            li
+                              a(href='#') Change Password
+                            li
+                              a(href='#') My Profile
+                        li
+                          a.navbar-brand(href='/logout') Logout
+        .container
+            .row
+                .col-sm-8
+                    .panel.panel-white.post.panel-shadow#myPanel(style='margin-top:110px;')
+                        h5.text-center #{message}
+                        .post-heading
+                            h3.myh3 Please Write how many tickets you need
+                        .post-description
+                            h4 From #{route.from} To #{route.to} in #{route.days[0].date}
+                            h5 each comment will be considered as a request for one ticket, If you like to have more, please comment more than once.
+                            form#commentform(action='/view', method='post')
+                                input(name='routeId' , type='hidden',value=route.id)
+                                input(name='dayId' , type='hidden',value=route.days[0].id)
+                                textarea.form-control#new_comment(rows='1', placeholder='Comment' , name='comment', value='1')
+                                br
+                                button.btn#my-btn(type='submit') Comment
+                                br
+                                each comment in route.comments
+                                    .actionBox
+                                        ul.commentList
+                                            li.commentText
+                                                h4(style='color:blue') #{comment.user.name}
+                                                h5 <b>#{comment.text}</b>
+                                                - createdAt = comment.createdAt.toDateString()
+                                                span.date.sub-text #{createdAt}
+        script(src='js/jquery.min.js')
+        script(src='js/bootstrap.min.js')

@@ -1,0 +1,48 @@
+doctype html
+html(lang='en')
+    head
+        title Jade
+        link(rel='stylesheet', href='css/bootstrap.min.css')
+        link(rel='stylesheet', href='css/routes.css')
+        link(rel='stylesheet', href='css/info.css')
+
+    body
+      .navbar-wrapper
+          .container-fluid
+              nav.navbar.navbar-fixed-top.myNav
+                .container
+                  .navbar-header
+                    button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+                      span.sr-only Toggle navigation
+                      span.icon-bar
+                      span.icon-bar
+                      span.icon-bar
+                  #navbar.navbar-collapse.collapse
+                    ul.nav.navbar-nav
+                      li.active
+                        a.navbar-brand(href='/') Home
+                    ul.nav.navbar-nav.pull-right
+                      li.dropdown
+                        a.navbar-brand.dropdown-toggle.active(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+                          | Signed in as  
+                          span.caret
+                        ul.dropdown-menu
+                          li
+                            a(href='#') Change Password
+                          li
+                            a(href='#') My Profile
+                      li
+                        a.navbar-brand(href='/logout') Logout
+      .container-fluid
+        .row
+          .col-xs-12.col-sm-12.col-md-12
+            h2(style='margin-top:100px;') For people who don't know what group-tickets are:
+            p(style='font-size:20px') If you can find 10 people who are traveling in the same day from the same <br> station to the same one, you can all buy Group-Tickets for 7 euro each.
+            h2 Advices
+            ul.a
+              li Please be careful and don't pay via websites like paysafe.
+              li For a group of ten ,one ticket costs 7 euro. 
+              li You don't have to print the ticket anymore, It can be downloaded to the NS app.
+              li Please ask for one ticket at a time. If You need more, comment multible times.
+        script(src='js/jquery.min.js')
+        script(src='js/bootstrap.min.js')

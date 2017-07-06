@@ -1,0 +1,31 @@
+{
+  "name": "ns-grouptickets-personalproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "\u001b[D\u001b[D\u001b[D\u001bapp\u001b[C\u001b\u001b[C\u001b[C\u001b[C\u001b[C.js)",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rawan-a-d/NS-GroupTickets-PersonalProject.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rawan-a-d/NS-GroupTickets-PersonalProject/issues"
+  },
+  "homepage": "https://github.com/rawan-a-d/NS-GroupTickets-PersonalProject#readme",
+  "dependencies": {
+    "bcrypt": "^1.0.2",
+    "body-parser": "^1.17.2",
+    "bunyan": "^1.8.10",
+    "express": "^4.15.3",
+    "express-session": "^1.15.3",
+    "nodemailer": "^4.0.1",
+    "nodemon": "^1.11.0",
+    "pg": "^6.4.0",
+    "pug": "^2.0.0-rc.2",
+    "sequelize": "^4.2.0"
+  }
+}

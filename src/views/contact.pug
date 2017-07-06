@@ -1,0 +1,93 @@
+doctype html
+html(lang='en')
+    head
+        title Jade
+        link(rel='stylesheet', href='css/bootstrap.min.css')       
+        link(rel='stylesheet', href='css/contact.css')
+        link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+    body
+        .navbar-wrapper
+            .container-fluid
+                nav.navbar.navbar-fixed-top.myNav
+                  .container
+                    .navbar-header
+                      button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+                        span.sr-only Toggle navigation
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                    #navbar.navbar-collapse.collapse
+                      ul.nav.navbar-nav
+                        li.active
+                          a.navbar-brand(href='/') Home
+                        li
+                          a.navbar-brand(href='/contact') Contact
+                        li
+                          a.navbar-brand(href='/info') About
+                      ul.nav.navbar-nav.pull-right
+                        li.dropdown
+                          a.navbar-brand.dropdown-toggle.active(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+                            | Signed in as  
+                            span.caret
+                          ul.dropdown-menu
+                            li
+                              a(href='#') Change Password
+                            li
+                              a(href='#') My Profile
+                        li
+                          a.navbar-brand(href='/logout') Logout
+      .container.animated.fadeIn
+          .row
+            h1.header-title(style='margin-top:100px;')  Contact 
+            hr
+            #parent.col-sm-12
+              .col-sm-6.col-sm-push-3
+                form.contact-form
+                  .form-group
+                    input#to.form-control(type='text', placeholder='To')
+                  .form-group.form_left
+                    input#subject.form-control(type='text', placeholder='Subject', required='')
+                  .form-group
+                    textarea#content.form-control.textarea-contact(rows='5', placeholder='Type Your Message/Feedback here...', required='')
+                    br
+                    button.btn.btn-default.btn-send#send_email Send
+                    span#message
+          .container.second-portion
+            .row
+              .col-xs-12.col-sm-6.col-lg-4
+                .box
+                  .icon
+                    .image
+                      i.fa.fa-envelope(aria-hidden='true')
+                    .info
+                      h3.title MAIL & WEBSITE
+                      p
+                        i.fa.fa-envelope(aria-hidden='true')
+                        |  &nbsp groupticketsns@gmail.com
+                        br
+                  .space
+              .col-xs-12.col-sm-6.col-lg-4
+                .box
+                  .icon
+                    .image
+                      i.fa.fa-mobile(aria-hidden='true')
+                    .info
+                      h3.title CONTACT
+                      p
+                        i.fa.fa-mobile(aria-hidden='true')
+                        |  &nbsp 0622567845
+                        br
+                  .space
+              .col-xs-12.col-sm-6.col-lg-4
+                .box
+                  .icon
+                    .image
+                      i.fa.fa-map-marker(aria-hidden='true')
+                    .info
+                      h3.title ADDRESS
+                      p
+                        i.fa.fa-map-marker(aria-hidden='true')
+                        |  &nbsp Amsterdam
+                  .space
+      script(src='js/jquery.min.js')
+      script(src='js/bootstrap.min.js')
