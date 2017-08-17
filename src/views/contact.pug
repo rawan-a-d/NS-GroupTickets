@@ -6,36 +6,34 @@ html(lang='en')
         link(rel='stylesheet', href='css/contact.css')
         link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
     body
-        .navbar-wrapper
-            .container-fluid
-                nav.navbar.navbar-fixed-top.myNav
-                  .container
-                    .navbar-header
-                      button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
-                        span.sr-only Toggle navigation
-                        span.icon-bar
-                        span.icon-bar
-                        span.icon-bar
-                    #navbar.navbar-collapse.collapse
-                      ul.nav.navbar-nav
-                        li.active
-                          a.navbar-brand(href='/') Home
-                        li
-                          a.navbar-brand(href='/contact') Contact
-                        li
-                          a.navbar-brand(href='/info') About
-                      ul.nav.navbar-nav.pull-right
-                        li.dropdown
-                          a.navbar-brand.dropdown-toggle.active(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
-                            | Signed in as  
-                            span.caret
-                          ul.dropdown-menu
-                            li
-                              a(href='#') Change Password
-                            li
-                              a(href='#') My Profile
-                        li
-                          a.navbar-brand(href='/logout') Logout
+      .navbar-wrapper
+          .container-fluid
+              nav.navbar.navbar-fixed-top.myNav
+                .container
+                  .navbar-header
+                    button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+                      span.sr-only Toggle navigation
+                      span.icon-bar
+                      span.icon-bar
+                      span.icon-bar
+                  #navbar.navbar-collapse.collapse
+                    ul.nav.navbar-nav
+                      li.active
+                        a.navbar-brand(href='/') Home
+                      li
+                        a.navbar-brand(href='/info') About
+                    ul.nav.navbar-nav.pull-right
+                      li.dropdown
+                        a.navbar-brand.dropdown-toggle.active(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+                          | Signed in as  
+                          span.caret
+                        ul.dropdown-menu
+                          li
+                            a(href='#') Change Password
+                          li
+                            a(href='#') My Profile
+                      li
+                        a.navbar-brand(href='/logout') Logout
       .container.animated.fadeIn
           .row
             h1.header-title(style='margin-top:100px;')  Contact 
@@ -46,9 +44,9 @@ html(lang='en')
                   .form-group
                     input#to.form-control(type='text', placeholder='To')
                   .form-group.form_left
-                    input#subject.form-control(type='text', placeholder='Subject', required='')
+                    input#subject.form-control(type='text', placeholder='Subject', required)
                   .form-group
-                    textarea#content.form-control.textarea-contact(rows='5', placeholder='Type Your Message/Feedback here...', required='')
+                    textarea#content.form-control.textarea-contact(rows='5', placeholder='Type Your Message/Feedback here...', required)
                     br
                     button.btn.btn-default.btn-send#send_email Send
                     span#message

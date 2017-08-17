@@ -1,53 +1,68 @@
-.panel-white {
-  border: 1px solid #dddddd;
+.panel-white
+{
+    border: 1px solid #ddd;
 }
 
-.post .post-heading {
-  height: 95px;
-  padding: 20px 15px;
+.post .post-heading
+{
+    height: 95px;
+    padding: 20px 15px;
 }
 
-.post .post-description {
-  padding: 15px;
+.post .post-description
+{
+    padding: 15px;
 }
 
-.commentList {
-    padding:0;
-    list-style:none;
-    max-height:200px;
-    overflow:auto;
+.commentList
+{
+    overflow: auto;
+
+    max-height: 200px;
+    padding: 0;
+
+    list-style: none;
 }
 
-.commentText p {
-    margin:0;
+.commentText p
+{
+    margin: 0;
 }
 
-#myPanel{
-  margin: 30px -180px 50px 170px;
-  padding: 20px 20px 20px 20px;
-  background-color: #95E1D3
+#myPanel
+{
+    margin: 30px -180px 50px 170px;
+    padding: 20px 20px 20px 20px;
+
+    background-color: #95e1d3;
 }
 
-#my-btn {
-  background-color: #FCE38A;
-  border-radius: 6px;
+#my-btn
+{
+    border-radius: 6px;
+    background-color: #fce38a;
 }
 
-body{
-    background-color: #EAFFD0
+body
+{
+    background-color: #eaffd0;
 }
 
-.myh3{
-  font-family:lobster;
+.myh3
+{
+    font-family: lobster;
 }
 
-.myNav{
-  border: none;
-  background-color: #60c74e;
-  margin-bottom: 60px !important;
-  color: #fff !important;
+.myNav
+{
+    margin-bottom: 60px !important;
+
+    color: #fff !important;
+    border: none;
+    background-color: #60c74e;
 }
 
-.navbar-brand{
-  color: white;
+.navbar-brand
+{
+    color: white;
 }

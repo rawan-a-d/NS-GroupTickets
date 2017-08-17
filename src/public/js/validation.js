@@ -1,5 +1,4 @@
 $(function(){
-
 	$.validator.addMethod('strongPassword', function(value,element){
 		return this.optional(element) 
 	    || value.length >= 6
@@ -18,6 +17,10 @@ $(function(){
 			password: {
 				required: true,
 				strongPassword: true
+			},
+			password_conf: {
+				required: true,
+				equalTo: password
 			}
 		},
 		messages: {
@@ -30,10 +33,15 @@ $(function(){
 			},
 			password: {
 				required: 'Please enter a password'
+			},
+			password_conf: {
+				required: 'Please enter your password again',
+				equalTo: 'Please enter the same password'
 			}
 		}
 	})
 })
+
 function remoteValidate(typedIn){
 	console.log("called")
 	$.post('/validation',{typedIn: typedIn}, function(data,status){

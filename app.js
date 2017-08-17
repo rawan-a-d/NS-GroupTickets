@@ -16,7 +16,7 @@ app.set('view engine', 'pug');
 app.use('/', bodyParser()); //creates key-value pairs request.body in app.post, e.g. request.body.username
 app.use(express.static('src/public'));
 app.use(session({
-	secret: process.env.Session_secret, //change to SESSION_SECRET
+	secret: process.env.SESSION_SECRET,
 	resave: true,
 	saveUninitialized: false
 }));
@@ -26,7 +26,7 @@ let transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
         user: 'groupticketsns@gmail.com',
-        pass:  'ns87654321'
+        pass:  `${process.env.GMAIL_PASSWORD}`
     },
     logger: bunyan.createLogger({
         name: 'nodemailer'
@@ -204,6 +204,29 @@ app.post('/register', (req,res) =>{ // deal with the data that the client has se
 	});
 });
 
+									/* Validation */
+
+app.post('/validation', function(req,res){ // deal with an ajax request and send a response
+	User.findOne({ //look if a user already has an account
+		where: {
+			email: req.body.typedIn
+		}
+	})
+	.then((user) =>{
+		var message = '';
+		if(user){ // if so send this message
+			message = 'This email already exists';
+			res.send(message);
+		}
+		else{ // otherwise do this
+			message = '';
+			res.send(message);
+		}
+	})
+	.catch((err) =>{
+		throw err;
+	});	
+});
 
                                                    /* Login */
 
@@ -233,7 +256,6 @@ app.post('/logIn', (req,res) =>{
 				}
 				else{ // otherwise do this
 					res.render('logIn', {message:'Invalid email or password'});
-
 				}
 			});
 		}
@@ -270,6 +292,7 @@ app.post('/routes', (req,res)=>{
 										/* View */
 app.get('/view', (req,res)=>{
 	var user = req.session.user
+	console.log(user)
 	if(user){
 		let routeId = req.query.routeId
 		let dayId = req.query.dayId
@@ -307,13 +330,11 @@ app.post('/view', (req,res) =>{
 			where : {
 				routeId: routeId,
 				dayId: dayId
-
-
 			},
 			include: [User]
 		})
 		.then((comments)=>{
-			if(comments.length === 3){ // It should be === 9 but for testing I made it 1
+			if(comments.length === 10){
 				Group.create({
 					link: 'http://localhost:3000/group',
 				})
@@ -367,6 +388,7 @@ app.post('/view', (req,res) =>{
 	})
 })
 
+											/* Group */
 app.get('/group', (req,res) =>{
 	const groupId = req.query.id
 	console.log("Group id from query pug" + groupId)
@@ -396,6 +418,7 @@ app.post('/group', (req,res) =>{
 	})
 })
 
+											/* Info */
 app.get('/info',(req,res) =>{
 	var user = req.session.user
 	if(user){
@@ -406,6 +429,7 @@ app.get('/info',(req,res) =>{
 	}
 })
 
+											/* Admin */
 app.get('/admin',(req,res)=>{
 	Route.findAll()
 	.then((routes)=>{
@@ -450,6 +474,7 @@ app.post('/admin', (req,res)=>{
 	})
 })
 
+									/* Contact */
 app.get('/contact', (req,res)=>{
 	var user = req.session.user
 	if(user){

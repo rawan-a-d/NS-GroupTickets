@@ -23,16 +23,17 @@ html(lang='en')
                     form#register-form(action='/register', method='post', role='form', style='display: block;')
                       .form-group
                           label(for='name') NAME
-                          input.form-control(name='name', type='text')
+                          input.form-control(id='name' name='name', type='text')
                       .form-group
-                        label(for='email') Email
-                        input#username.form-control(type='text', name='email', tabindex='1')
+                        label(for='email1') Email
+                        input.form-control(id='email1' type='text', name='email', tabindex='1' value='')
+                        b.validation(style='color:black ;margin-bottom: 20px;margin-left: 10 px;')
                       .form-group
                         label(for='password') Password
-                        input#password.form-control(type='password', name='password', tabindex='2')
+                        input.form-control(id='password' type='password', name='password', tabindex='2')
                       .form-group
-                        label(for='password') Confirm password
-                        input#confirm-password.form-control(type='password', name='password_conf', tabindex='2')
+                        label(for='confirm-password') Confirm password
+                        input.form-control(id='confirm-password' type='password', name='password_conf', tabindex='2' onclick = "remoteValidate(document.getElementById('email1').value)")
                       .form-group
                         .row
                           .col-sm-6.col-sm-offset-3
@@ -40,10 +41,10 @@ html(lang='en')
                     form#login-form(action='/logIn', method='post', role='form', style='display: none;')
                       .form-group
                         label(for='email') Email
-                        input#username.form-control(type='text', name='email', tabindex='1', value='')
+                        input.form-control(id='email' type='text', name='email', tabindex='1', value='')
                       .form-group
                         label(for='password') Password
-                        input#password.form-control(type='password', name='password', tabindex='2')
+                        input.form-control(id='password' type='password', name='password', tabindex='2')
                       .form-group.text-center
                         input#remember(type='checkbox', tabindex='3', name='remember')
                         label(for='remember')  Remember Me
