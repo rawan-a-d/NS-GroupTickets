@@ -1,29 +1,121 @@
 html,
-body
-{
+body {
     height: 100%;
+    width: 100%;
     text-align: center;
     color: white;
     /*css for full size background image*/
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url(../img/train1.jpg) no-repeat center center fixed;
-    background-color: #060;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../img/train1.jpg) no-repeat center center;
     -webkit-background-size: cover;
-       -moz-background-size: cover;
-         -o-background-size: cover;
-            background-size: cover;
-    text-shadow: 0 1px 3px rgba(0,0,0,.5);
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, .5);
+    margin: 0;
 }
 
-a,
-a:focus,
-a:hover
-{
+
+/* The navbar */
+
+.navbar-brand {
+    margin: 10px 40px;
     color: white;
 }
 
-/* Custom default button */
-.cover .btn-lg
-{
+.navbar-right {
+    padding: 10px 40px;
+}
+
+.navbar-toggle {
+    padding: auto 0;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.navbar-toggle .icon-bar {
+    background-color: white;
+    margin-top: 10px;
+}
+
+
+/* Navbar links */
+
+.myBtn {
+    outline: none;
+    border: none;
+    display: block;
+    cursor: pointer;
+    background-color: transparent;
+    position: relative;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+}
+
+.three {
+    color: #fff;
+    border-color: transparent;
+}
+
+.three:before,
+.three:after {
+    width: 0;
+    height: 2px;
+    content: " ";
+    background-color: #0226d2;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+}
+
+.three:after {
+    top: 100%;
+}
+
+.three:hover {
+    letter-spacing: 1px;
+    color: #ffc917;
+    background-color: Transparent !important;
+}
+
+.three:hover:before,
+.three:hover:after {
+    width: 100%;
+    left: 0;
+}
+
+
+/* Header */
+
+h1 {
+    color: #ffc917;
+    font-weight: 700;
+    font-size: 2em;
+}
+
+
+/* Content */
+
+.content {
+    font-size: 1.5em;
+    margin-top: 13%;
+    text-align: center;
+    text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4),
+    0px 8px 13px rgba(0, 0, 0, 0.1),
+    0px 18px 23px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Learn more button */
+
+.btn-lg {
     border: none;
     background-color: #0226d2;
     text-shadow: none;
@@ -32,153 +124,16 @@ a:hover
     font-weight: 200;
     letter-spacing: 1px;
     padding: 8px;
-}
-
-.site-wrapper
-{
-    display: table;
-    width: 100%;
-    height: 100%; /* For at least Firefox */
-    min-height: 100%;
-
-    -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-            box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-}
-
-.site-wrapper-inner
-{
-    display: table-cell;
-
-    vertical-align: top;
-}
-
-.cover-container
-{
-    margin-right: auto;
-    margin-left: auto;
-}
-
-/* Padding for spacing */
-.inner
-{
-    padding: 30px;
-}
-
-
-/*
- * Header
- */
-.masthead-brand
-{
     margin-top: 10px;
-    margin-bottom: 10px;
 }
 
-.masthead-nav > li
-{
-    display: inline-block;
-}
 
-.masthead-nav > li + li
-{
-    margin-left: 20px;
-}
+/* All rights reserved */
 
-.masthead-nav > li > a
-{
-    font-size: 16px;
-    font-weight: bold;
-
-    padding-right: 0;
-    padding-left: 0;
-
-    color: #fff; /* IE8 proofing */
-    color: rgba(255,255,255,.95);
-    border-bottom: 2px solid transparent;
-}
-
-.masthead-nav > li > a:hover,
-.masthead-nav > li > a:focus
-{
-    border-bottom-color: #a9a9a9;
-    border-bottom-color: rgba(255,255,255,.25);
-    background-color: transparent;
-}
-
-.masthead-nav > .active > a,
-.masthead-nav > .active > a:hover,
-.masthead-nav > .active > a:focus
-{
-    color: #fff;
-    border-bottom-color: #fff;
-}
-
-@media (min-width: 768px)
-{
-    .masthead-brand
-    {
-        float: left;
-    }
-    .masthead-nav
-    {
-        float: right;
-    }
-}
-
-.cover
-{
-    padding: 0 20px;
-}
-
-@media (min-width: 768px)
-{
-    /* Pull out the header and footer */
-    .masthead
-    {
-        position: fixed;
-        top: 0;
-    }
-    .mastfoot
-    {
-        position: fixed;
-        bottom: 0;
-    }
-    /* Start the vertical centering */
-    .site-wrapper-inner
-    {
-        vertical-align: middle;
-    }
-    /* Handle the widths */
-    .masthead,
-    .mastfoot,
-    .cover-container
-    {
-        width: 100%; /* Must be percentage or pixels for horizontal alignment */
-    }
-}
-
-@media (min-width: 992px)
-{
-    .masthead,
-    .mastfoot,
-    .cover-container
-    {
-        width: 700px;
-    }
-}
-
-#heading
-{
-    margin-top: -14px;
-}
-
-.cover-heading {
-    color: #ffc917;
-    font-size: 40px;
-    font-weight: 600;
-}
-
-.lead {
-    font-size: 20px;
-    line-height: 140%;
+p#name {
+    width: 85%;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    font-size: 0.5em;
 }
