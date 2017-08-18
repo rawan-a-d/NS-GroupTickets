@@ -1,19 +1,21 @@
-html,
 body {
     height: 100%;
     width: 100%;
-    text-align: center;
     /*css for full size background image*/
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4) ), url("../img/inside.jpg") no-repeat center center;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../img/inside.jpg') no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    background-position: absolute;
     margin: 0;
+    text-align: left;
+    color: white;
     text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2),
     0px 8px 13px rgba(0, 0, 0, 0.1),
     0px 18px 23px rgba(0, 0, 0, 0.1);
 }
+
 
 /* The navbar */
 
@@ -37,7 +39,6 @@ body {
     background-color: white;
     margin-top: 10px;
 }
-
 
 
 /* Navbar links */
@@ -93,46 +94,46 @@ body {
     left: 0;
 }
 
-.a {
-	list-style: circle inside none;
-	font-size: 20px;
-}
 
-body {
-	text-align: left;
-	color: white;
-}
+/* Headings */
 
 h2 {
-	margin-top: 12%;
+    margin-top: 12%;
 }
 
-h2 , h3 {
-	color: #0226d2;
-	font-size: 30px;
-/* font-weight: 200px; */
+h2,
+h3 {
+    color: #0226d2;
+    font-size: 2em;
+    margin-left: 40px;
+    text-shadow: 0.8px 0.8px white;
 }
 
-h2 , h3 , p , ul {
-	margin-left: 15px;
+
+/* Text (paragraph and li) */
+
+p,
+li {
+    font-size: 1.4em;
+    line-height: 130%;
 }
 
-p , li {
-	font-size: 20px;
-	line-height: 130%;
+p {
+    margin-left: 2em;
 }
+
+
+/* The bullets next to lis */
 
 ul.a {
-  list-style-type: none; /* no default bullets */
+    list-style-type: none;
+    /* no default bullets */
 }
 
-ul.a > li::before {
-  content: "";
-  margin-right: 10px;
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  background-color: #a17c00;
-  border-radius: 50%;
-  margin-bottom: 2px;
+ul.a>li::before {
+    color: #ffc400;
+    float: left;
+    margin: 0 0 0 -1em;
+    width: 1em;
+    content: '\2022';
 }
