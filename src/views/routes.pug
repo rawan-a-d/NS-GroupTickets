@@ -26,18 +26,17 @@ html(lang='en')
               a.myBtn.three(href='/info') About
             li
               a.myBtn.three(href='/logout') Log Out
-    .container
+    .container.wrapper
       .row
-        .col-lg-12.col-sm-12.col-xs-12
-          each route in routes
-            .col-md-4.col-sm-6.col-xs-12
+        each route in routes
+          .col-md-4.col-md-push-0.col-sm-8.col-xs-8.col-xs-push-2
+            .holder
               h3 #{route.from} To #{route.to}
-              .item
               p <b>The route covers:</b> #{route.covers}
               li.dropdown
                 a#dates.dropdown-toggle(href='#', data-toggle='dropdown')
                   | Select a date
-                  b.caret
+                b.caret
                 ul.dropdown-menu
                   each day in route.days
                     li

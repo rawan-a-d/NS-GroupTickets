@@ -15,17 +15,17 @@ body {
 }
 
 
-
-
 /* The navbar */
 
 .navbar-brand {
     margin: 10px 40px;
     color: white;
+    font-size: 21px;
 }
 
 .navbar-right {
     padding: 10px 40px;
+    font-size: 17px;
 }
 
 .navbar-toggle {

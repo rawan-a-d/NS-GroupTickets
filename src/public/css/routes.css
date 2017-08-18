@@ -1,27 +1,31 @@
-html,
 body {
     height: 100%;
     width: 100%;
     text-align: center;
     /*css for full size background image*/
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../img/gray.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../img/inside.jpg') no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    background-position: absolute;
     margin: 0;
     text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2),
     0px 8px 13px rgba(0, 0, 0, 0.1),
     0px 18px 23px rgba(0, 0, 0, 0.1);
 }
 
+
+/* The navbar */
+
 a {
     max-height: 200px;
     font-size: 17px;
 }
 
-
-/* The navbar */
+nav {
+    margin-bottom: 12%;
+}
 
 .navbar-brand {
     margin: 10px 40px;
@@ -43,7 +47,6 @@ a {
     background-color: white;
     margin-top: 10px;
 }
-
 
 
 /* Navbar links */
@@ -100,18 +103,41 @@ a {
 }
 
 
+/* Div around all the routes */
+
+.wrapper {
+    margin: 0 auto;
+}
+
+
+/* Div around each route */
+
+.holder {
+    margin-bottom: 6%;
+}
+
+
 /* Heading */
 
 h3 {
     color: #0226d2;
-    margin-top: 34%;
+    text-shadow: 0.8px 0.8px white;
+}
+
+
+/* Paragraph */
+
+p {
+    color: white;
+    line-height: 140%;
+    font-size: 1.1em;
 }
 
 
 /* Select a date */
 
-a#dates {
-    color: #a17c00;
+li.dropdown>a#dates.dropdown-toggle {
+    color: #ffc400;
 }
 
 
