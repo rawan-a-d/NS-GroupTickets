@@ -29,9 +29,8 @@ body {
 }
 
 .navbar-toggle {
+    margin: 10px 40px;
     padding: auto 0;
-    margin-top: 10px;
-    margin-bottom: 0;
 }
 
 .navbar-toggle .icon-bar {
