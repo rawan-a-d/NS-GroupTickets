@@ -25,7 +25,9 @@ html(lang='en')
               a.myBtn.three(href='/info') About
             li
               a.myBtn.three(href='/logout') Log Out
-    .container
+    .container-fluid
+      .row
+        .img
       .row
         .col-sm-8
           .panel
@@ -45,7 +47,7 @@ html(lang='en')
                     ul.commentList
                       li.commentText
                         h4#name #{comment.user.name}
-                        p <b>#{comment.text}</b>
+                        p#comment <b>#{comment.text}</b>
                         - createdAt = comment.createdAt.toDateString()
                         span.date #{createdAt}
                     hr

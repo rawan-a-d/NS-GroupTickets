@@ -1,27 +1,41 @@
 body {
     height: 100%;
     width: 100%;
-    text-align: left;
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../img/inside.jpg') no-repeat center center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-position: absolute;
+    text-align: center;
+/*     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('http://upload.wikimedia.org/wikipedia/commons/a/a4/Sprinter_Interieur_2e_klas_2.jpg') no-repeat center center;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover; */
+    /* background-size: cover; */
+    /* background-position: absolute; */
     margin: 0;
+/*     padding: 0; */
     color: white;
+    background-color: #e6e6e9;
+    line-height: 130%;
 }
 
+.img {
+
+    height: 400px;
+    margin: 0;
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('http://www.vanrensdesign.nl/wp-content/uploads/2015/05/frans-van-rens-NS-trein-station-amersfoort-1500x550.jpg') 50% 0;
+    background-size: 100% 100%;
+/*     margin-top: -100px; */
+/* background-size: cover; */
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+    background-position: center;
+}
 
 /* The navbar */
 
 a {
     max-height: 200px;
     font-size: 17px;
-}
-
-nav {
-    margin-bottom: 10%;
 }
 
 .navbar-brand {
@@ -104,24 +118,29 @@ nav {
 
 .panel {
     width: 90%;
-    height: 70%;
+/*     height: 70%; */
+    text-align: left;
     padding: 30px;
     border: 1px solid rgba(0, 0, 0, .2);
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
-    border-radius: 5px;
+/*     border-radius: 5px; */
     -moz-background-clip: padding;
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
-    background: rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: 0 0 13px 3px rgba(0, 0, 0, .5);
-    -webkit-box-shadow: 0 0 13px 3px rgba(0, 0, 0, .5);
-    box-shadow: 0 0 13px 3px rgba(0, 0, 0, .5);
+    background: rgba(255, 255, 255, 0.91);
+/*     -moz-box-shadow: 0 0 13px 3px rgba(0, 0, 0, .5);
+-webkit-box-shadow: 0 0 13px 3px rgba(0, 0, 0, .5); */
+/*     box-shadow: 0 0 13px 3px rgba(0, 0, 0, .5); */
     overflow: hidden;
     margin-bottom: 30px;
     /* font-family: 'Teko', sans-serif; */
     font-size: 20px;
     /* letter-spacing: 1px; */
+    margin-top: 230px;
+    color: #484747;
+/*     height: .0625rem;
+display: table-row; */
 }
 
 #note {
@@ -136,7 +155,7 @@ nav {
 
 .post-heading>#route {
     font-size: 21px;
-    margin: 10px 10px;
+    margin: 20px 10px;
     color: #ffc400;
 }
 
@@ -182,7 +201,7 @@ textarea {
 
 .commentList {
     overflow: auto;
-    max-height: 200px;
+    max-height: 120px;
     padding: 0;
     list-style: none;
 }
@@ -193,11 +212,15 @@ textarea {
     font-size: 20px;
 }
 
+#comment {
+    padding-left: 20px;
+}
 
 .date {
     color: #90949c;
     text-shadow: none;
     font-size: 14px;
+    padding-left: 20px;
 }
 
 hr {
