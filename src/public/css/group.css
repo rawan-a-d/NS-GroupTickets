@@ -29,13 +29,16 @@ body {
 }
 
 b {
-    font-size: 1.2em ;
+    font-size: 1.2em;
 }
 
+
 /* The navbar */
+
 nav {
     margin-bottom: 250px;
 }
+
 a {
     max-height: 200px;
     font-size: 17px;
@@ -116,6 +119,7 @@ a {
     left: 0;
 }
 
+
 /* Panel */
 
 .panel {
@@ -132,6 +136,7 @@ a {
     color: #484747;
     border-radius: 0;
 }
+
 
 /* Form */
 
@@ -198,7 +203,9 @@ hr {
     border: 0;
 }
 
+
 /* Small panel */
+
 .small-panel {
     text-align: left;
     padding: 20px;
@@ -206,20 +213,23 @@ hr {
     background-clip: padding-box;
     -moz-background-clip: padding;
     -webkit-background-clip: padding-box;
-    background: rgba(255, 255, 255, 0.91);
+    background-color: rgba(255, 255, 255, 0.91);
     overflow: hidden;
     margin-bottom: 30px;
-    font-size: 20px;
-/*     margin-top: 250px; */
     color: #484747;
     line-height: 135%;
 }
 
-.small-panel > .heading {
+.small-panel>.heading {
     color: #0226d2;
 }
 
-ul#a, li#members {
+ul#a,
+li#members {
     list-style-type: none;
-    /* no default bullets */
+}
+
+li {
+    font-size: 1.2em;
+    line-height: 130%;
 }
