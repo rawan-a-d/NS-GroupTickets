@@ -2,34 +2,28 @@ body {
     height: 100%;
     width: 100%;
     text-align: center;
-/*     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('http://upload.wikimedia.org/wikipedia/commons/a/a4/Sprinter_Interieur_2e_klas_2.jpg') no-repeat center center;
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover; */
-    /* background-size: cover; */
-    /* background-position: absolute; */
     margin: 0;
-/*     padding: 0; */
     color: white;
     background-color: #e6e6e9;
     line-height: 130%;
 }
 
-.img {
 
+/* Image */
+
+.img {
     height: 400px;
     margin: 0;
     width: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('http://www.vanrensdesign.nl/wp-content/uploads/2015/05/frans-van-rens-NS-trein-station-amersfoort-1500x550.jpg') 50% 0;
-    background-size: 100% 100%;
-/*     margin-top: -100px; */
-/* background-size: cover; */
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('http://www.vanrensdesign.nl/wp-content/uploads/2015/05/frans-van-rens-NS-trein-station-amersfoort-1500x550.jpg');
     position: absolute;
     left: 0px;
     top: 0px;
     z-index: -1;
     background-position: center;
+    background-size: cover;
 }
+
 
 /* The navbar */
 
@@ -118,36 +112,23 @@ a {
 
 .panel {
     width: 90%;
-/*     height: 70%; */
     text-align: left;
     padding: 30px;
     border: 1px solid rgba(0, 0, 0, .2);
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-/*     border-radius: 5px; */
+    background-clip: padding-box;
     -moz-background-clip: padding;
     -webkit-background-clip: padding-box;
-    background-clip: padding-box;
     background: rgba(255, 255, 255, 0.91);
-/*     -moz-box-shadow: 0 0 13px 3px rgba(0, 0, 0, .5);
--webkit-box-shadow: 0 0 13px 3px rgba(0, 0, 0, .5); */
-/*     box-shadow: 0 0 13px 3px rgba(0, 0, 0, .5); */
     overflow: hidden;
     margin-bottom: 30px;
-    /* font-family: 'Teko', sans-serif; */
     font-size: 20px;
-    /* letter-spacing: 1px; */
     margin-top: 230px;
     color: #484747;
-/*     height: .0625rem;
-display: table-row; */
 }
 
-#note {
-    line-height: 150%;
-    font-size: 15px;
-    text-shadow: none;
-    color: #90949c;
+#message {
+    color: #ff4b3e;
+    margin-left: 10px;
 }
 
 
@@ -155,8 +136,16 @@ display: table-row; */
 
 .post-heading>#route {
     font-size: 21px;
-    margin: 20px 10px;
+    margin: 15px 10px;
     color: #ffc400;
+    line-height: 130%;
+}
+
+.post-description>#note {
+    line-height: 150%;
+    font-size: 15px;
+    text-shadow: none;
+    color: #90949c;
 }
 
 .post-description {
@@ -227,9 +216,4 @@ hr {
     height: 6px;
     background: url(http://ibrahimjabbari.com/english/images/hr-12.png) repeat-x 0 0;
     border: 0;
-}
-
-#message {
-    color: #ff4b3e;
-    margin-left: 10px;
 }
