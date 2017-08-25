@@ -1,45 +1,225 @@
-.myNav
-{
-    margin-bottom: 60px;
-
-    color: #fff;
-    border: none;
-    background-color: #60c74e;
-}
-
-.navbar-brand
-{
-    color: white;
-}
-
-body
-{
-    font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 1.6;
-
-    background-color: #f5f5f5;
-}
-
-.textarea
-{
-    font-family: 'Helvetica Neue',arial,sans-serif;
-    font-size: 14px;
-    line-height: 1.9;
-
-    display: block;
-
+body {
+    height: 100%;
     width: 100%;
-    height: auto;
-    min-height: 40px;
-    margin: 10;
-    margin-top: 20px;
-    padding: 3px 10px 8px;
+    text-align: center;
+    margin: 0;
+    color: white;
+    background-color: #e6e6e9;
+    line-height: 130%;
+}
 
-    resize: none;
-    cursor: text;
 
-    color: #2a2e2e;
+/* Image */
+
+.img {
+    height: 400px;
+    margin: 0;
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../img/group.jpg');
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+    background-position: center;
+    background-size: cover;
+}
+
+#date-time {
+    margin-top: 175px;
+}
+
+b {
+    font-size: 1.2em ;
+}
+
+/* The navbar */
+nav {
+    margin-bottom: 250px;
+}
+a {
+    max-height: 200px;
+    font-size: 17px;
+}
+
+.navbar-brand {
+    margin: 10px 40px;
+    color: white;
+    font-size: 21px;
+}
+
+.navbar-right {
+    padding: 10px 40px;
+}
+
+.navbar-toggle {
+    padding: auto 0;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.navbar-toggle .icon-bar {
+    background-color: white;
+    margin-top: 10px;
+}
+
+
+/* Navbar links */
+
+.myBtn {
+    outline: none;
+    border: none;
+    display: block;
+    cursor: pointer;
+    background-color: transparent;
+    position: relative;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+}
+
+.three {
+    color: #fff;
+    border-color: transparent;
+}
+
+.three:before,
+.three:after {
+    width: 0;
+    height: 2px;
+    content: " ";
+    background-color: #0226d2;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+}
+
+.three:after {
+    top: 100%;
+}
+
+.three:hover {
+    letter-spacing: 1px;
+    color: #ffc917;
+    background-color: Transparent !important;
+}
+
+.three:hover:before,
+.three:hover:after {
+    width: 100%;
+    left: 0;
+}
+
+/* Panel */
+
+.panel {
+    text-align: left;
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, .2);
+    background-clip: padding-box;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-color: rgba(255, 255, 255, 0.91);
+    overflow: hidden;
+    margin-bottom: 30px;
+    font-size: 20px;
+    color: #484747;
+    border-radius: 0;
+}
+
+/* Form */
+
+.form-control {
+    border: 1px solid #ededed;
+    border-radius: 5px;
+    text-align: left;
+}
+
+.form-control:focus {
+    border: 1px solid #0226d2;
+}
+
+textarea {
+    margin-top: 15px;
+}
+
+.btn-send {
+    float: right;
+    font-size: 18px;
+    color: #0226d2;
+    border: 1px solid #0226d2;
+    border-radius: 3px;
+    background: #ffc917;
+}
+
+.btn-send:hover {
+    transition: background .5s;
+    color: #0226d2;
+    border: 1px solid #0226d2;
+    background: #fff;
+}
+
+
+/* Comment */
+
+.commentList {
+    overflow: auto;
+    max-height: 120px;
+    padding: 0;
+    list-style: none;
+}
+
+#name {
+    color: #0226d2;
+    text-shadow: 0.6px 0.3px gray;
+    font-size: 20px;
+}
+
+#comment {
+    padding-left: 20px;
+}
+
+.date {
+    color: #90949c;
+    text-shadow: none;
+    font-size: 14px;
+    padding-left: 20px;
+}
+
+hr {
+    height: 6px;
+    background: url(http://ibrahimjabbari.com/english/images/hr-12.png) repeat-x 0 0;
     border: 0;
+}
+
+/* Small panel */
+.small-panel {
+    text-align: left;
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, .2);
+    background-clip: padding-box;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background: rgba(255, 255, 255, 0.91);
+    overflow: hidden;
+    margin-bottom: 30px;
+    font-size: 20px;
+/*     margin-top: 250px; */
+    color: #484747;
+    line-height: 135%;
+}
+
+.small-panel > .heading {
+    color: #0226d2;
+}
+
+ul#a, li#members {
+    list-style-type: none;
+    /* no default bullets */
 }

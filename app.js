@@ -96,7 +96,13 @@ Post.belongsTo(Group)
 Group.hasMany(Post)
 
 Post.belongsTo(User);
-User.hasMany(Post)
+User.hasMany(Post);
+
+Route.hasMany(Group, {as: "members"});
+Group.belongsTo(Route)
+
+Day.hasMany(Group, {as: "members"})
+Group.belongsTo(Day)
 
 db.sync({force: true})
 .then(()=> {
@@ -159,7 +165,7 @@ db.sync({force: true})
 });
 
 											/* Home */
-app.get('/', (req,res)=>{
+app.get('/', (req,res) =>{
 	res.render('home')
 });
                                             /* Register */
@@ -337,6 +343,8 @@ app.post('/view', (req,res) =>{
 			if(comments.length === 10){
 				Group.create({
 					link: 'http://localhost:3000/group',
+					dayId: dayId,
+					routeId: routeId,
 				})
 				.then((group)=>{
 					for (var i = 0; i < comments.length; i++){
@@ -375,6 +383,7 @@ app.post('/view', (req,res) =>{
 						]
 					})
 					.then((route)=>{
+
 						console.log('route')							
 						console.log(route)	
 						res.render('seePosts', {route: route, message: 'An email has been sent to you with a link of the group'})
@@ -392,18 +401,30 @@ app.post('/view', (req,res) =>{
 app.get('/group', (req,res) =>{
 	const groupId = req.query.id
 	console.log("Group id from query pug" + groupId)
-	Group.findOne({
+/*	Day.findOne({
 		where: {
-			id: groupId
+			groupId: groupId
 		},
-		include: [
-			{model: User},
-			{model: Post, include: [User]}
-		]
+		include: {model: Route, where: { groupId: groupId}}
 	})
-	.then((group)=>{
-		res.render('group', {group: group, userId: req.session.user.id})		
-	})
+	.then((day)=>{*/
+		Group.findOne({
+			where: {
+				id: groupId
+			},
+			include: [
+				{model: User},
+				{model: Post, include: [User]},
+				{model: Route},
+				{model: Day}
+			]
+		})
+		.then((group)=>{
+			console.log('group')
+			console.log(group)
+			res.render('group', {group: group, userId: req.session.user.id})		
+		})
+/*	})*/
 })
 
 app.post('/group', (req,res) =>{

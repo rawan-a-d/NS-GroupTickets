@@ -1,65 +1,62 @@
 doctype html
 html(lang='en')
-    head
-        title Jade
-        link(rel='stylesheet', href='css/bootstrap.min.css')
-        link(rel='stylesheet', href='css/routes.css')
-        link(rel='stylesheet', href='css/group.css')
-
-    body
-      .navbar-wrapper
-        .container-fluid
-            nav.navbar.navbar-fixed-top.myNav
-              .container
-                .navbar-header
-                  button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
-                    span.sr-only Toggle navigation
-                    span.icon-bar
-                    span.icon-bar
-                    span.icon-bar
-                #navbar.navbar-collapse.collapse
-                  ul.nav.navbar-nav
-                    li.active
-                      a.navbar-brand(href='/') Home
-                    li
-                      a.navbar-brand(href='/contact') Contact
-                    li
-                      a.navbar-brand(href='/info') About
-                  ul.nav.navbar-nav.pull-right
-                    li.dropdown
-                      a.navbar-brand.dropdown-toggle.active(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
-                        | Signed in as  
-                        span.caret
-                      ul.dropdown-menu
-                        li
-                          a(href='#') Change Password
-                        li
-                          a(href='#') My Profile
-                    li
-                      a.navbar-brand(href='/logout') Logout
-      .container(style='margin-top:70px;')
-        .row
-          .col-sm-8
-            form(action='/group', method='post')
-              textarea.textarea.form-control(rows='1', placeholder='Post here' , name='post')
-              input(name='userId' , type='hidden',value=userId)
-              input(name='groupId' , type='hidden',value=group.id)
-              br
-              button.btn#my-btn(type='submit') Post
-            each post in group.posts
-              h3 #{post.user.name}
-              article
-                p #{post.content}
-          .col-sm-4
-            h3 Members
-            ul
-            each user in group.users
-              li(style='padding-left:23px') #{user.name}
-            h3 Guidance
-            ul
-              li A member of the group should be in charge of buying the tickets.
-              li The rest of the group should transfer him money and send a screenshot of the payment along with their information (Name - Birthday - Email)
-              li You can buy the tickets from <a href='https://www.ns.nl/producten/losse-kaartjes/p/ns-groepsretour'>NS website</a>
+  head
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Group
+    link(rel='stylesheet', href='css/bootstrap.min.css')
+    link(rel='stylesheet', href='css/group.css')
+  body
+    nav
+      .container
+        //- Brand and toggle get grouped for better mobile display
+        .navbar-header
+          button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1', aria-expanded='false')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand.myBtn.three(href='/') Home
+        //- Collect the nav links, forms, and other content for toggling
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+          ul.nav.navbar-nav.navbar-right
+            li
+              a.myBtn.three(href='/contact') Contact 
+            li
+              a.myBtn.three(href='/info') About
+            li
+              a.myBtn.three(href='/logout') Log Out
+    .container-fluid
+      .row
+        .img
+          h3#date-time From <b>#{group.route.from}</b> To <b>#{group.route.to}</b> in <b>#{group.day.date}</b>
+      .row
+        .col-md-12.col-xs-12
+          .col-md-7.col-xs-12
+            .panel
+              form(action='/group', method='post')
+                textarea.form-control(rows='1', placeholder='Post here..' , name='post')
+                input(name='userId' , type='hidden',value=userId)
+                input(name='groupId' , type='hidden',value=group.id)
+                br
+                button.btn.btn-send(type='submit') Post
+                br
+                each post in group.posts
+                  ul.commentList
+                    li.commentText
+                      h4#name #{post.user.name}
+                      p#comment <b>#{post.content}</b>
+                      - createdAt = post.createdAt.toDateString()
+                      span.date #{createdAt}
+          .col-md-5.col-xs-12
+            .small-panel
+              h3.heading Members
+              ul#a
+              each user in group.users
+                li#members #{user.name}
+              h3.heading Guidance
+              ul
+                li A member of the group should be in charge of buying the tickets.
+                li The rest of the group should transfer him money and send a screenshot of the payment along with their information (Name - Birthday - Email)
+                li You can buy the tickets from <a href='https://www.ns.nl/producten/losse-kaartjes/p/ns-groepsretour'>NS Website</a>
       script(src='js/jquery.min.js')
       script(src='js/bootstrap.min.js')
-      script(type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js")
