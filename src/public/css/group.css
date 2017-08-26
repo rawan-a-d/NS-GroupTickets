@@ -135,6 +135,7 @@ a {
     font-size: 20px;
     color: #484747;
     border-radius: 0;
+    box-shadow: 0 0.125rem 0 0 rgba(7, 7, 33, .15);
 }
 
 
@@ -218,6 +219,7 @@ hr {
     margin-bottom: 30px;
     color: #484747;
     line-height: 135%;
+    box-shadow: 0 0.125rem 0 0 rgba(7, 7, 33, .15);
 }
 
 .small-panel>.heading {
