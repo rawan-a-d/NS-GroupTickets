@@ -1,4 +1,4 @@
-# NS-GroupTickets-PersonalProject
+# Introduction:
 The purpose of this website is to find groups and organize buying the tickets and make it as easy as possible.
 
 You can read more about NS Group Tickets here: http://www.amsterdamtips.com/news/ns-group-return-ticket
